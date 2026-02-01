@@ -12,7 +12,7 @@ INTEGRATION_NAME = "AI Automation Suggester"
 # Token budgeting
 # ─────────────────────────────────────────────────────────────
 # Single legacy knob (kept for backward compatibility)
-CONF_MAX_TOKENS = "max_tokens"
+CONF_MAX_TOKENS = "max_completion_tokens"
 DEFAULT_MAX_TOKENS = 500  # legacy default – used for both budgets if new keys absent
 
 # New, separate knobs (Issue #91)
