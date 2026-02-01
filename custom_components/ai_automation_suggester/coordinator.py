@@ -411,7 +411,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
             headers = {
@@ -482,7 +482,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             }
             body = {
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
 
@@ -551,7 +551,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
             timeout = aiohttp.ClientTimeout(total=900)
@@ -612,7 +612,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
                 "messages": [
                     {"role": "user", "content": [{"type": "text", "text": prompt}]}
                 ],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
 
@@ -736,7 +736,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
                 "messages": [
                     {"role": "user", "content": [{"type": "text", "text": prompt}]}
                 ],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
             headers = {
@@ -801,7 +801,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
 
@@ -931,7 +931,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
             timeout = aiohttp.ClientTimeout(total=900)
@@ -990,7 +990,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": temperature,
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
             }
 
             timeout = aiohttp.ClientTimeout(total=900)
@@ -1051,7 +1051,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": temperature,
             }
 
@@ -1114,14 +1114,14 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
             body = {
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": out_budget,
+                "max_completion_tokens": out_budget,
                 "temperature": self._opt(
                     CONF_OPENROUTER_TEMPERATURE, DEFAULT_TEMPERATURE
                 ),
             }
 
             if reasoning_max_tokens > 0:
-                body["reasoning"] = {"max_tokens": reasoning_max_tokens}
+                body["reasoning"] = {"max_completion_tokens": reasoning_max_tokens}
 
             timeout = aiohttp.ClientTimeout(total=900)
 
