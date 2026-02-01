@@ -41,7 +41,7 @@ class ProviderValidator:
         payload = {
             "model": model,
             "messages": [{"role": "user", "content": [{"type": "text", "text": "ping"}]}],
-            "max_tokens": 1,
+            "max_completion_tokens": 1,
         }
         try:
             resp = await self.session.post("https://api.anthropic.com/v1/messages", headers=hdr, json=payload)
